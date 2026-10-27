@@ -228,6 +228,23 @@ code {
   background: var(--bg-subtle);
 }
 
+.topbar__actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.topbar .segmented--sm button {
+  padding: 4px 10px;
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 20px;
+  color: var(--fg-muted);
+}
+.topbar .segmented--sm button.is-active {
+  color: var(--fg);
+  font-weight: 600;
+}
+
 /* ── Onglets ──────────────────────────────────────── */
 .tabs {
   position: sticky;

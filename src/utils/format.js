@@ -1,4 +1,16 @@
-const MONTHS = ['janv.', 'févr.', 'mars', 'avr.', 'mai', 'juin', 'juil.', 'août', 'sept.', 'oct.', 'nov.', 'déc.']
+const MONTHS = {
+  fr: ['janv.', 'févr.', 'mars', 'avr.', 'mai', 'juin', 'juil.', 'août', 'sept.', 'oct.', 'nov.', 'déc.'],
+  en: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
+}
+export const MONTH_NAMES = {
+  fr: ['janvier', 'février', 'mars', 'avril', 'mai', 'juin', 'juillet', 'août', 'septembre', 'octobre', 'novembre', 'décembre'],
+  en: ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'],
+}
+export const MONTH_INITIALS = {
+  fr: ['J', 'F', 'M', 'A', 'M', 'J', 'J', 'A', 'S', 'O', 'N', 'D'],
+  en: ['J', 'F', 'M', 'A', 'M', 'J', 'J', 'A', 'S', 'O', 'N', 'D'],
+}
+const PRESENT = { fr: "aujourd'hui", en: 'present' }
 
 /** 'AAAA-MM' -> { y, m } (m de 0 à 11) */
 export function parseMonth(value) {
@@ -12,17 +24,17 @@ export function nowMonth() {
   return { y: d.getFullYear(), m: d.getMonth() }
 }
 
-export function formatMonth(value) {
+export function formatMonth(value, lang = 'fr') {
   const p = parseMonth(value)
-  return p ? `${MONTHS[p.m]} ${p.y}` : ''
+  return p ? `${(MONTHS[lang] ?? MONTHS.fr)[p.m]} ${p.y}` : ''
 }
 
-export function formatRange(start, end) {
-  return `${formatMonth(start)} – ${end ? formatMonth(end) : "aujourd'hui"}`
+export function formatRange(start, end, lang = 'fr') {
+  return `${formatMonth(start, lang)} – ${end ? formatMonth(end, lang) : PRESENT[lang] ?? PRESENT.fr}`
 }
 
-/** Durée lisible entre deux mois (bornes incluses) : « 1 an 3 mois » */
-export function formatDuration(start, end) {
+/** Durée lisible entre deux mois (bornes incluses) : « 1 an 3 mois » / « 1 yr 3 mos » */
+export function formatDuration(start, end, lang = 'fr') {
   const a = parseMonth(start)
   const b = end ? parseMonth(end) : nowMonth()
   if (!a || !b) return ''
@@ -30,8 +42,13 @@ export function formatDuration(start, end) {
   const years = Math.floor(total / 12)
   const months = total % 12
   const parts = []
-  if (years) parts.push(`${years} an${years > 1 ? 's' : ''}`)
-  if (months) parts.push(`${months} mois`)
+  if (lang === 'en') {
+    if (years) parts.push(`${years} yr${years > 1 ? 's' : ''}`)
+    if (months) parts.push(`${months} mo${months > 1 ? 's' : ''}`)
+  } else {
+    if (years) parts.push(`${years} an${years > 1 ? 's' : ''}`)
+    if (months) parts.push(`${months} mois`)
+  }
   return parts.join(' ')
 }
 

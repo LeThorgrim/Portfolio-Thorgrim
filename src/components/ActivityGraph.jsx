@@ -1,7 +1,7 @@
 // Graphe d'activité façon « contributions » GitHub, mais par mois :
 // une ligne par année, une case par mois, plus c'est foncé plus il s'est passé de choses.
-const MONTH_LABELS = ['J', 'F', 'M', 'A', 'M', 'J', 'J', 'A', 'S', 'O', 'N', 'D']
-const MONTH_NAMES = ['janvier', 'février', 'mars', 'avril', 'mai', 'juin', 'juillet', 'août', 'septembre', 'octobre', 'novembre', 'décembre']
+import { useLang } from '../i18n.jsx'
+import { MONTH_INITIALS, MONTH_NAMES } from '../utils/format.js'
 
 function level(v) {
   if (!v) return 0
@@ -12,6 +12,10 @@ function level(v) {
 }
 
 export default function ActivityGraph({ entries }) {
+  const { lang, t } = useLang()
+  const initials = MONTH_INITIALS[lang] ?? MONTH_INITIALS.fr
+  const names = MONTH_NAMES[lang] ?? MONTH_NAMES.fr
+
   const totals = {}
   for (const { month, weight } of entries) totals[month] = (totals[month] ?? 0) + weight
 
@@ -24,10 +28,10 @@ export default function ActivityGraph({ entries }) {
 
   return (
     <div className="box activity">
-      <div className="activity__grid" role="table" aria-label="Activité par mois">
+      <div className="activity__grid" role="table" aria-label={t('activityLabel')}>
         <div className="activity__row" role="row">
           <span className="activity__year" />
-          {MONTH_LABELS.map((m, i) => (
+          {initials.map((m, i) => (
             <span key={i} className="activity__month" role="columnheader">
               {m}
             </span>
@@ -38,7 +42,7 @@ export default function ActivityGraph({ entries }) {
             <span className="activity__year" role="rowheader">
               {y}
             </span>
-            {MONTH_LABELS.map((_, m) => {
+            {initials.map((_, m) => {
               const key = `${y}-${String(m + 1).padStart(2, '0')}`
               const future = y > now.getFullYear() || (y === now.getFullYear() && m > now.getMonth())
               const v = totals[key] ?? 0
@@ -47,7 +51,7 @@ export default function ActivityGraph({ entries }) {
                   key={m}
                   role="cell"
                   className={`activity__cell lvl-${future ? 'x' : level(v)}`}
-                  title={`${MONTH_NAMES[m]} ${y}`}
+                  title={`${names[m]} ${y}`}
                 />
               )
             })}
@@ -55,11 +59,11 @@ export default function ActivityGraph({ entries }) {
         ))}
       </div>
       <div className="activity__legend">
-        Moins
+        {t('less')}
         {[0, 1, 2, 3, 4].map((l) => (
           <span key={l} className={`activity__cell lvl-${l}`} />
         ))}
-        Plus
+        {t('more')}
       </div>
     </div>
   )

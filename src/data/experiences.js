@@ -2,61 +2,72 @@
 //  Tes expériences : ajoute un objet dans la liste pour un nouveau job.
 //  L'ordre n'a pas d'importance, le site trie par date (plus récent en haut).
 //
+//  Textes traduits : { fr: '…', en: '…' }. Une simple chaîne marche aussi.
+//
 //  Champs :
 //    role        (obligatoire) intitulé du poste
 //    company     (obligatoire) nom de l'entreprise
 //    start       (obligatoire) 'AAAA-MM'
 //    end         'AAAA-MM', ou null si c'est ton poste actuel
-//    type        'CDI' | 'CDD' | 'Stage' | 'Alternance' | 'Freelance' | ...
+//    type        CDI, Stage, Alternance, Freelance…
 //    location    ville / remote
 //    url         site de l'entreprise (optionnel)
 //    summary     une phrase de description
 //    highlights  liste de réalisations concrètes
-//    tags        technos / compétences
+//    tags        technos / compétences (pas traduites)
 //    pinned      true pour l'épingler dans l'onglet Aperçu
 // ─────────────────────────────────────────────────────────────
 
 const experiences = [
   {
-    role: 'Développeur·se Front-End',
+    role: { fr: 'Développeur·se Front-End', en: 'Front-End Developer' },
     company: 'Entreprise Actuelle',
     start: '2024-09',
     end: null,
-    type: 'CDI',
-    location: 'Paris · Hybride',
+    type: { fr: 'CDI', en: 'Full-time' },
+    location: { fr: 'Paris · Hybride', en: 'Paris · Hybrid' },
     url: 'https://exemple.com',
-    summary: "Développement de l'interface principale de la plateforme SaaS.",
+    summary: {
+      fr: "Développement de l'interface principale de la plateforme SaaS.",
+      en: "Building the main interface of the company's SaaS platform.",
+    },
     highlights: [
-      'Refonte du tableau de bord : temps de chargement divisé par 2',
-      "Mise en place d'une bibliothèque de composants partagée",
-      'Encadrement de 2 stagiaires',
+      { fr: 'Refonte du tableau de bord : temps de chargement divisé par 2', en: 'Dashboard rewrite: load time cut in half' },
+      { fr: "Mise en place d'une bibliothèque de composants partagée", en: 'Set up a shared component library' },
+      { fr: 'Encadrement de 2 stagiaires', en: 'Mentored 2 interns' },
     ],
     tags: ['React', 'TypeScript', 'Vite', 'Storybook'],
     pinned: true,
   },
   {
-    role: 'Développeur·se Web (Alternance)',
+    role: { fr: 'Développeur·se Web (Alternance)', en: 'Web Developer (Work-study)' },
     company: 'Agence Exemple',
     start: '2022-09',
     end: '2024-08',
-    type: 'Alternance',
+    type: { fr: 'Alternance', en: 'Work-study' },
     location: 'Marne-la-Vallée',
-    summary: 'Sites vitrines et applications web pour des clients PME.',
+    summary: {
+      fr: 'Sites vitrines et applications web pour des clients PME.',
+      en: 'Websites and web apps for small-business clients.',
+    },
     highlights: [
-      'Livraison de 12 sites clients',
-      'Automatisation des déploiements avec GitHub Actions',
+      { fr: 'Livraison de 12 sites clients', en: 'Delivered 12 client websites' },
+      { fr: 'Automatisation des déploiements avec GitHub Actions', en: 'Automated deployments with GitHub Actions' },
     ],
     tags: ['JavaScript', 'Node.js', 'WordPress', 'CI/CD'],
   },
   {
-    role: 'Stagiaire Développeur·se',
+    role: { fr: 'Stagiaire Développeur·se', en: 'Developer Intern' },
     company: 'Startup Exemple',
     start: '2022-04',
     end: '2022-07',
-    type: 'Stage',
+    type: { fr: 'Stage', en: 'Internship' },
     location: 'Remote',
-    summary: "Prototype d'une application mobile de réservation.",
-    highlights: ['Prototype présenté aux investisseurs'],
+    summary: {
+      fr: "Prototype d'une application mobile de réservation.",
+      en: 'Prototype of a mobile booking app.',
+    },
+    highlights: [{ fr: 'Prototype présenté aux investisseurs', en: 'Prototype pitched to investors' }],
     tags: ['React Native', 'Firebase'],
   },
 ]

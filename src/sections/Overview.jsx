@@ -3,6 +3,7 @@ import Markdown from '../components/Markdown.jsx'
 import ActivityGraph from '../components/ActivityGraph.jsx'
 import Icon from '../components/Icon.jsx'
 import { Box, LangDot, Label } from '../components/ui.jsx'
+import { useLang } from '../i18n.jsx'
 
 function PinnedCard({ item }) {
   const Title = item.href ? 'a' : 'span'
@@ -30,8 +31,14 @@ function PinnedCard({ item }) {
 }
 
 export default function Overview({ sections }) {
+  const { lang, t, tr } = useLang()
+
   const pinned = sections.flatMap((s) =>
-    s.toPinned ? (s.items ?? []).filter((i) => i.pinned).map((i) => ({ ...s.toPinned(i), key: `${s.id}-${i.title ?? i.role}` })) : [],
+    s.toPinned
+      ? (s.items ?? [])
+          .filter((i) => i.pinned)
+          .map((i, idx) => ({ ...s.toPinned(i, lang), key: `${s.id}-${idx}` }))
+      : [],
   )
 
   const activity = sections.flatMap((s) => (s.toActivity ? (s.items ?? []).flatMap(s.toActivity) : []))
@@ -46,12 +53,12 @@ export default function Overview({ sections }) {
           </>
         }
       >
-        <Markdown source={profile.about} />
+        <Markdown source={tr(profile.about)} />
       </Box>
 
       {pinned.length > 0 && (
         <div>
-          <h2 className="section-heading">Épinglés</h2>
+          <h2 className="section-heading">{t('pinned')}</h2>
           <div className="pinned-grid">
             {pinned.map((p) => (
               <PinnedCard key={p.key} item={p} />
@@ -62,7 +69,7 @@ export default function Overview({ sections }) {
 
       {activity.length > 0 && (
         <div>
-          <h2 className="section-heading">Activité</h2>
+          <h2 className="section-heading">{t('activity')}</h2>
           <ActivityGraph entries={activity} />
         </div>
       )}

@@ -25,6 +25,20 @@ npm run build      # génère le site statique dans dist/
 
 Le tri par date, les compteurs des onglets, les durées et le graphe d'activité se calculent tout seuls.
 
+## Français / English
+
+Le site s'affiche en français si le navigateur est en français, sinon en anglais. Le visiteur peut changer avec le sélecteur **FR | EN** en haut à droite, et son choix est mémorisé.
+
+Dans les fichiers de données, chaque texte peut être :
+
+```js
+summary: { fr: 'Refonte du tableau de bord', en: 'Dashboard rewrite' },  // traduit
+company: 'Entreprise',                                                     // identique dans les 2 langues
+```
+
+S'il manque une langue, l'autre est affichée. Les textes de l'interface (boutons, titres…) sont dans `src/i18n.jsx`.
+Le CV peut aussi être différent par langue : `cvFile: { fr: 'cv.pdf', en: 'resume.pdf' }`.
+
 ## Ajouter une nouvelle section (ex : Formations)
 
 1. Crée `src/data/formations.js` qui exporte une liste.
@@ -35,7 +49,7 @@ import formations from './data/formations.js'
 
 {
   id: 'formations',
-  label: 'Formations',
+  label: { fr: 'Formations', en: 'Education' },
   icon: 'book',
   component: ExperienceSection,   // réutilise la timeline…
   items: formations,              // …ou crée ton composant dans src/sections/

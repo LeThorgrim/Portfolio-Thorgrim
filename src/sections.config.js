@@ -10,11 +10,11 @@
 //
 //  Clés d'une entrée :
 //    id         identifiant d'URL (#experiences)
-//    label      texte de l'onglet
+//    label      texte de l'onglet ({ fr, en } ou simple chaîne)
 //    icon       nom d'icône (voir components/Icon.jsx)
 //    component  composant qui affiche la section ; il reçoit { items, section }
 //    items      les données
-//    toPinned   (optionnel) item -> carte épinglée de l'Aperçu (si item.pinned)
+//    toPinned   (optionnel) (item, lang) -> carte épinglée de l'Aperçu (si item.pinned)
 //    toActivity (optionnel) item -> [{ month: 'AAAA-MM', weight }] pour le graphe
 // ─────────────────────────────────────────────────────────────
 
@@ -24,42 +24,43 @@ import Overview from './sections/Overview.jsx'
 import ExperienceSection from './sections/ExperienceSection.jsx'
 import AchievementSection from './sections/AchievementSection.jsx'
 import { formatRange, monthsBetween } from './utils/format.js'
+import { tr } from './i18n.jsx'
 
 export const sections = [
   {
     id: 'overview',
-    label: 'Aperçu',
+    label: { fr: 'Aperçu', en: 'Overview' },
     icon: 'book',
     component: Overview,
   },
   {
     id: 'experiences',
-    label: 'Expériences',
+    label: { fr: 'Expériences', en: 'Experience' },
     icon: 'briefcase',
     component: ExperienceSection,
     items: experiences,
-    toPinned: (e) => ({
+    toPinned: (e, lang) => ({
       icon: 'briefcase',
-      title: e.role,
-      subtitle: e.company,
-      description: e.summary,
-      lang: e.tags?.[0],
-      meta: formatRange(e.start, e.end),
+      title: tr(e.role, lang),
+      subtitle: tr(e.company, lang),
+      description: tr(e.summary, lang),
+      lang: tr(e.tags?.[0], lang),
+      meta: formatRange(e.start, e.end, lang),
     }),
     toActivity: (e) => monthsBetween(e.start, e.end).map((month) => ({ month, weight: 1 })),
   },
   {
     id: 'achievements',
-    label: 'Réalisations',
+    label: { fr: 'Réalisations', en: 'Achievements' },
     icon: 'trophy',
     component: AchievementSection,
     items: achievements,
-    toPinned: (a) => ({
+    toPinned: (a, lang) => ({
       icon: 'trophy',
-      title: a.title,
-      subtitle: a.category,
-      description: a.description,
-      lang: a.tags?.[0],
+      title: tr(a.title, lang),
+      subtitle: tr(a.category, lang),
+      description: tr(a.description, lang),
+      lang: tr(a.tags?.[0], lang),
       stars: a.stars,
       href: a.links?.[0]?.url,
     }),

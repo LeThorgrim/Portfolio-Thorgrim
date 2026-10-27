@@ -1,9 +1,11 @@
 import Icon from './Icon.jsx'
 import { Counter } from './ui.jsx'
+import { useLang } from '../i18n.jsx'
 
 export default function Tabs({ sections, active }) {
+  const { t, tr } = useLang()
   return (
-    <nav className="tabs" aria-label="Sections">
+    <nav className="tabs" aria-label={t('sections')}>
       <div className="tabs__inner">
         {sections.map((s) => (
           <a
@@ -13,7 +15,7 @@ export default function Tabs({ sections, active }) {
             aria-current={s.id === active ? 'page' : undefined}
           >
             <Icon name={s.icon} className="muted" />
-            {s.label}
+            {tr(s.label)}
             {Array.isArray(s.items) && <Counter>{s.items.length}</Counter>}
           </a>
         ))}
