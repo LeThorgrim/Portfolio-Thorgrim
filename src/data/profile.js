@@ -6,49 +6,45 @@
 // ─────────────────────────────────────────────────────────────
 
 const profile = {
-  name: 'Prénom Nom',
-  username: 'pseudo',
+  name: 'Marco',
+  username: 'Thorgrim',
   // Mets ta photo dans /public (ex: 'avatar.jpg'). Laisse vide pour afficher tes initiales.
   avatar: '',
-  title: { fr: 'Développeur·se Full-Stack', en: 'Full-Stack Developer' },
+  title: { fr: 'Ingénieur Logiciel', en: 'Software Engineer' },
   bio: {
     fr: 'Passionné·e par le web, les outils bien conçus et les projets qui servent à quelque chose.',
     en: 'Passionate about the web, well-crafted tools and projects that actually matter.',
   },
   location: { fr: 'Île-de-France, France', en: 'Paris area, France' },
-  status: { emoji: '🚀', text: { fr: 'Ouvert·e aux opportunités', en: 'Open to opportunities' } },
+  status: { emoji: '🚀', text: { fr: 'Ouvert aux opportunités', en: 'Open to opportunities' } },
 
   links: [
-    { type: 'email', label: 'moi@exemple.com', url: 'mailto:moi@exemple.com' },
-    { type: 'github', label: 'github.com/pseudo', url: 'https://github.com/pseudo' },
-    { type: 'linkedin', label: 'linkedin.com/in/pseudo', url: 'https://linkedin.com/in/pseudo' },
-    { type: 'website', label: 'mon-site.fr', url: 'https://mon-site.fr' },
+    { type: 'email', label: 'thorgrim.marco.pro@gmail.com', url: 'mailto:thorgrim.marco.pro@gmail.com' },
+    { type: 'github', label: 'github.com/LeThorgrim', url: 'https://github.com/LeThorgrim' },
+    //{ type: 'website', label: 'mon-site.fr', url: 'https://mon-site.fr' },
   ],
 
   // Fichier(s) à placer dans /public. Une seule chaîne = même CV pour les deux langues.
   // Laisse vide pour masquer le bouton.
-  cvFile: { fr: 'cv.pdf', en: 'resume.pdf' },
+  cvFile: { fr: 'cv_fr.pdf', en: 'cv_en.pdf' },
 
   // Le « README » affiché dans l'onglet Aperçu (markdown léger : **gras**, `code`, listes « - »).
   about: {
-    fr: `Salut 👋 Je suis **Prénom**, développeur·se basé·e en Île-de-France.
+    fr: `Salut, je suis **Marco** connu sous le pseudonyme de **Thorgrim**, développeur français actuellement en Île-de-France 
+    (mais ouvert à la mobilité).
 
-J'aime construire des interfaces rapides et accessibles, et je m'intéresse à l'architecture front-end, au design system et à l'open source.
+    J'ai récemment terminé mes études d'ingénieur en développement logiciel et suis bilingue en français et en anglais, mais j'ai aussi de solides bases en espagnol. 
 
-- 🔭 Actuellement : en poste chez **Entreprise**
-- 🌱 J'apprends : \`TypeScript\` avancé et le testing
-- 💬 Parle-moi de : React, UX, café`,
+    J'aime construire des outils et des apps, apprendre de nouvelles technologies et publier mes créations en ligne :)`,
 
-    en: `Hi 👋 I'm **Firstname**, a developer based near Paris.
+    en: `Hi, I'm **Marco** known as **Thorgrim**, a French developer currently based in the Paris area (but open to moving).
 
-I love building fast, accessible interfaces, and I'm into front-end architecture, design systems and open source.
+    I recently graduated as a software engineer and am bilingual in French and English, but also have a solid foundation in Spanish.
 
-- 🔭 Currently: working at **Company**
-- 🌱 Learning: advanced \`TypeScript\` and testing
-- 💬 Ask me about: React, UX, coffee`,
+    I enjoy building tools and apps, learning new technologies and publishing my creations online :)`,
   },
 
-  skills: ['React', 'JavaScript', 'TypeScript', 'Node.js', 'CSS', 'Git', 'Figma'],
+  skills: ['HTML5', 'JavaScript', 'TypeScript', "React", 'Node.js', 'Java', 'Spring Boot', 'Python', 'Django', 'C++', 'SQL', 'Git', 'Docker', 'Claude Code'],
 }
 
 export default profile

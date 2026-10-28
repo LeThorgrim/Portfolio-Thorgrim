@@ -19,43 +19,89 @@
 // ─────────────────────────────────────────────────────────────
 
 const experiences = [
+  //isen
   {
-    role: { fr: 'Développeur·se Front-End', en: 'Front-End Developer' },
-    company: 'Entreprise Actuelle',
-    start: '2024-09',
-    end: null,
-    type: { fr: 'CDI', en: 'Full-time' },
-    location: { fr: 'Paris · Hybride', en: 'Paris · Hybrid' },
-    url: 'https://exemple.com',
+    role: { fr: 'Diplôme d\'ingénieur en Informatique', en: 'Computer Science/Engineering Degree' },
+    company: 'ISEN Lille, France',
+    start: '2020-09',
+    end: '2026-08',
+    type: { fr: 'Master', en: 'Master Degree' },
+    location: { fr: 'Lille, France', en: 'Lille, France' },
+    url: 'https://www.isen.fr/campus/ecole-ingenieurs-lille/',
     summary: {
-      fr: "Développement de l'interface principale de la plateforme SaaS.",
-      en: "Building the main interface of the company's SaaS platform.",
+      fr: "Formation en ingénierie informatique au sein de l'ISEN Lille pour un Master accrédité CTI.",
+      en: "Computer science engineering program at ISEN Lille for a CTI-accredited Master's degree.",
     },
     highlights: [
-      { fr: 'Refonte du tableau de bord : temps de chargement divisé par 2', en: 'Dashboard rewrite: load time cut in half' },
-      { fr: "Mise en place d'une bibliothèque de composants partagée", en: 'Set up a shared component library' },
-      { fr: 'Encadrement de 2 stagiaires', en: 'Mentored 2 interns' },
+      { fr: 'Apprentissage des mathématiques, de la physique et de l\'informatique à un niveau avancé', 
+        en: 'Learning mathematics, physics, and computer science at an advanced level' },
+      { fr: "Familiarisation avec les outils de développement et les bonnes pratiques d'équipe", 
+        en: 'Familiarization with development tools and team best practices' }
     ],
-    tags: ['React', 'TypeScript', 'Vite', 'Storybook'],
     pinned: true,
   },
+  //all level up
   {
-    role: { fr: 'Développeur·se Web (Alternance)', en: 'Web Developer (Work-study)' },
-    company: 'Agence Exemple',
-    start: '2022-09',
-    end: '2024-08',
-    type: { fr: 'Alternance', en: 'Work-study' },
-    location: 'Marne-la-Vallée',
+    role: { fr: 'Développeur Web/Full Stack', en: 'Full Stack Developer' },
+    company: 'All Level Up',
+    start: '2024-01',
+    end: '2024-01',
+    type: { fr: 'Travail secondaire', en: 'Side Job' },
+    location: 'Remote',
     summary: {
-      fr: 'Sites vitrines et applications web pour des clients PME.',
-      en: 'Websites and web apps for small-business clients.',
+      fr: 'Site vitrine et application web pour un client PME.',
+      en: 'Showcase website and web application for a small business client.',
     },
     highlights: [
-      { fr: 'Livraison de 12 sites clients', en: 'Delivered 12 client websites' },
-      { fr: 'Automatisation des déploiements avec GitHub Actions', en: 'Automated deployments with GitHub Actions' },
+      { fr: 'Livraison d\'un site web pour un client', en: 'Delivered a website for a client' },
+      { fr: 'Service d\'hébergement et de maintenance', en: 'Hosting and maintenance services' },
+      { fr: 'Mise en place d\'une messagerie email', en: 'Implemented an email messaging system' }
     ],
-    tags: ['JavaScript', 'Node.js', 'WordPress', 'CI/CD'],
+    tags: ['HTML5', 'CSS3', 'JavaScript', 'Node.js'],
   },
+  //portimao
+  {
+    role: { fr: 'Stagiaire Développeur·se', en: 'Developer Intern' },
+    company: 'Câmara Municipal de Portimão',
+    start: '2025-05',
+    end: '2025-07',
+    type: { fr: 'Stage', en: 'Internship' },
+    location: 'Portimão, Portugal',
+    url: 'https://www.cm-portimao.pt/',
+    summary: {
+      fr: "Développement d'une application interne de catalogage des services de la communauté de communes.",
+      en: 'Development of an internal application for cataloging the services of the community of communes.',
+    },
+    highlights: [
+      { fr: 'Réalisation d\'un frontend React', en: 'Developed a React frontend' },
+      { fr: 'Mise en place d\'un backend Django', en: 'Set up a Django backend' },
+      { fr: 'Automatisation Docker pour le déploiement avec un outil d\'administration, de monitoring et d\'une BDD', en: 'Docker automation for deployment' }
+    ],
+    tags: ['React', 'Django', 'PostgreSQL', 'Docker'],
+  },
+  //sopra
+  {
+    role: { fr: 'Développeur Java/Full Stack', en: 'Java/Full Stack Developer' },
+    company: 'Sopra Steria',
+    start: '2025-09',
+    end: '2026-08',
+    type: { fr: 'Alternance', en: 'Apprenticeship' },
+    location: 'Villeneuve d\'Ascq, France',
+    url: 'https://www.soprasteria.fr/',
+    summary: {
+      fr: "Développement d'une application pour l'ANFSI dans le cadre de ma dernière année d'études.",
+      en: 'Development of an application for the ANFSI during my final year of studies.',
+    },
+    highlights: [
+      { fr: 'Maintenance d\'une application existante depuis plus de 4 ans', en: 'Maintenance of an existing application for over 4 years' },
+      { fr: 'Développement de nouvelles exigences métiers client', en: 'Development of new client business requirements' },
+      { fr: 'Travail sur le Backend/Frontend/Model de données', en: 'Worked on the Backend/Frontend/Data Model' },
+      { fr: 'Travail dans des conditions relevant du secret-défense', en: 'Worked in a classified defense environment' },
+    ],
+    tags: ['React', 'Spring Boot', 'PostgreSQL', 'Docker', 'Liquibase', 'GitLab CI/CD', 'Ansible'],
+  },
+  //tazio //TODO
+  /*
   {
     role: { fr: 'Stagiaire Développeur·se', en: 'Developer Intern' },
     company: 'Startup Exemple',
@@ -70,6 +116,7 @@ const experiences = [
     highlights: [{ fr: 'Prototype présenté aux investisseurs', en: 'Prototype pitched to investors' }],
     tags: ['React Native', 'Firebase'],
   },
+  */
 ]
 
 export default experiences

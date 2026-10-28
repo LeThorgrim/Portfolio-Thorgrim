@@ -67,12 +67,12 @@ export default function Overview({ sections }) {
         </div>
       )}
 
-      {activity.length > 0 && (
+      { /* activity.length > 0 && (
         <div>
           <h2 className="section-heading">{t('activity')}</h2>
           <ActivityGraph entries={activity} />
         </div>
-      )}
+      ) */}
     </div>
   )
 }

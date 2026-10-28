@@ -6,7 +6,7 @@ import { useLang } from '../i18n.jsx'
 export default function ProfileSidebar({ profile }) {
   const { t, tr } = useLang()
   const status = profile.status && { emoji: profile.status.emoji, text: tr(profile.status.text) }
-  const cv = tr(profile.cvFile)
+  // const cv = tr(profile.cvFile)
 
   return (
     <aside className="profile">
@@ -29,11 +29,11 @@ export default function ProfileSidebar({ profile }) {
       {profile.title && <p className="profile__title">{tr(profile.title)}</p>}
       {profile.bio && <p className="profile__bio">{tr(profile.bio)}</p>}
 
-      {cv && (
+      {/* cv && (
         <a className="btn btn--block" href={cv} download>
           <Icon name="download" /> {t('downloadCv')}
         </a>
-      )}
+      ) */}
 
       <ul className="profile__details">
         {profile.location && (
