@@ -70,11 +70,3 @@ src/
   styles/app.css      ← mise en page
 ```
 
-## Mettre en ligne gratuitement (GitHub Pages)
-
-1. Crée un dépôt GitHub et pousse ce dossier.
-2. Dans le dépôt : **Settings → Pages → Source : GitHub Actions**.
-3. Chaque `git push` sur `main` redéploie le site (workflow déjà inclus dans `.github/workflows/deploy.yml`).
-
-Le site sera à `https://<pseudo>.github.io/<nom-du-depot>/`. Nomme le dépôt `<pseudo>.github.io` pour l'avoir à la racine.
-Netlify ou Vercel marchent aussi : commande de build `npm run build`, dossier `dist`.

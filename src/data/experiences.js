@@ -24,7 +24,7 @@ const experiences = [
     role: { fr: 'Diplôme d\'ingénieur en Informatique', en: 'Computer Science/Engineering Degree' },
     company: 'ISEN Lille, France',
     start: '2020-09',
-    end: '2026-08',
+    end: '2026-05',
     type: { fr: 'Master', en: 'Master Degree' },
     location: { fr: 'Lille, France', en: 'Lille, France' },
     url: 'https://www.isen.fr/campus/ecole-ingenieurs-lille/',
@@ -99,6 +99,7 @@ const experiences = [
       { fr: 'Travail dans des conditions relevant du secret-défense', en: 'Worked in a classified defense environment' },
     ],
     tags: ['React', 'Spring Boot', 'PostgreSQL', 'Docker', 'Liquibase', 'GitLab CI/CD', 'Ansible'],
+    pinned: true,
   },
   //tazio //TODO
   /*

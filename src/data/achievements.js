@@ -25,54 +25,75 @@ const OPEN_SOURCE = 'Open source'
 const CODE = { fr: 'Code', en: 'Code' }
 const DEMO = { fr: 'Démo', en: 'Demo' }
 
+//categories exemple : PROJECT, HACKATHON, CERTIFICATION, OPEN_SOURCE ...
+
 const achievements = [
   {
-    title: 'mon-portfolio',
-    date: '2026-10',
+    title: 'Portfolio-Thorgrim',
     category: PROJECT,
     description: {
       fr: 'Ce site ! Portfolio modulaire en React, inspiré du design de GitHub.',
       en: 'This website! A modular React portfolio inspired by GitHub’s design.',
     },
-    tags: ['React', 'Vite', 'CSS'],
-    links: [{ label: CODE, url: 'https://github.com/pseudo/mon-portfolio' }],
-    pinned: true,
+    tags: ['TypeScript', 'React', 'Vite'],
+    links: [{ label: CODE, url: 'https://github.com/LeThorgrim/Portfolio-Thorgrim' }],
   },
   {
-    title: { fr: 'Hackathon Climat — 1re place', en: 'Climate Hackathon — 1st place' },
-    date: '2025-03',
-    category: HACKATHON,
-    description: {
-      fr: "Application de suivi d'empreinte carbone réalisée en 48 h en équipe de 4.",
-      en: 'Carbon footprint tracking app built in 48 hours with a team of 4.',
-    },
-    tags: ['TypeScript', 'Next.js', 'Data viz'],
-    links: [{ label: DEMO, url: 'https://exemple.com' }],
-    pinned: true,
-  },
-  {
-    title: 'budget-cli',
-    date: '2024-11',
+    title: 'Thorgrim-Map-Maker',
     category: PROJECT,
     description: {
-      fr: 'Outil en ligne de commande pour suivre ses dépenses depuis un export bancaire CSV.',
-      en: 'Command-line tool to track spending from a bank CSV export.',
+      fr: 'Ce site ! Portfolio modulaire en React, inspiré du design de GitHub.',
+      en: 'This website! A modular React portfolio inspired by GitHub’s design.',
     },
-    tags: ['Node.js', 'CLI'],
-    links: [{ label: CODE, url: 'https://github.com/pseudo/budget-cli' }],
-    stars: 42,
+    tags: ['TypeScript', 'React', 'Vite'],
+    links: [
+      { label: CODE, url: 'https://github.com/LeThorgrim/Thorgrim-Map-Maker' },
+      { label: DEMO, url: 'https://thorgrim-map-maker.thorgrim-marco-pro.workers.dev/' }
+    ],
     pinned: true,
   },
   {
-    title: 'AWS Certified Cloud Practitioner',
-    date: '2024-06',
-    category: CERTIFICATION,
+    title: 'Grim Chat (Discord Bot)',
+    category: PROJECT,
     description: {
-      fr: 'Fondamentaux du cloud AWS : services, sécurité, facturation.',
-      en: 'AWS cloud fundamentals: services, security, billing.',
+      fr: 'Un bot discord pour nettoyer les messages et canaux. (Le lien de démo est le lien d’invitation du bot sur un serveur Discord.)',
+      en: 'A discord bot for cleaning up messages and channels. (The demo link is the bot invitation link on a Discord server.)',
     },
-    tags: ['AWS', 'Cloud'],
+    tags: ['Python', 'Discord.py'],
+    links: [
+      { label: CODE, url: 'https://github.com/LeThorgrim/GrimChatBot' },
+      { label: DEMO, url: 'https://discord.com/oauth2/authorize?client_id=1553499832121954404&permissions=2064&integration_type=0&scope=bot+applications.commands' }
+    ],
+    pinned: true,
   },
+  {
+    title: 'Grim Utilities (Discord Bot)',
+    category: PROJECT,
+    description: {
+      fr: 'Un bot discord qui utilise des webhooks pour proxy des messages dans un cannal discord. Plusieurs triggers sont disponibles pour envoyer des messages automatiquement. (Le lien de démo est le lien d’invitation du bot sur un serveur Discord.)',
+      en: 'A discord bot that uses webhooks to proxy messages in a discord channel. Several triggers are available to send messages automatically. (The demo link is the bot invitation link on a Discord server.)',
+    },
+    tags: ['Python', 'Discord.py'],
+    links: [
+      { label: CODE, url: 'https://github.com/LeThorgrim/GrimUtilitiesBot' },
+      { label: DEMO, url: 'https://discord.com/oauth2/authorize?client_id=1553934378680193116&permissions=536914944&integration_type=0&scope=bot' }
+    ],
+    pinned: true,
+  },
+  {
+    title: 'BashCrossrefSearch',
+    category: PROJECT,
+    description: {
+      fr: "Projet d'école, un script bash qui utilise l'API Crossref pour rechercher des articles scientifiques.",
+      en: 'A bash script that uses the Crossref API to search for scientific articles.',
+    },
+    tags: ['Bash', 'Crossref API'],
+    links: [
+      { label: CODE, url: 'https://github.com/LeThorgrim/BashCrossrefSearch' },
+    ],
+  },
+
+  /* exemple for later
   {
     title: { fr: 'Contribution open source', en: 'Open source contribution' },
     date: '2023-12',
@@ -83,7 +104,10 @@ const achievements = [
     },
     tags: [{ fr: 'Accessibilité', en: 'Accessibility' }, 'React'],
     links: [{ label: 'Pull request', url: 'https://github.com' }],
+    stars: 42,
+    pinned: true,
   },
+  */
 ]
 
 export default achievements
