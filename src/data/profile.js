@@ -12,8 +12,8 @@ const profile = {
   avatar: '',
   title: { fr: 'Ingénieur Logiciel', en: 'Software Engineer' },
   bio: {
-    fr: 'Passionné·e par le web, les outils bien conçus et les projets qui servent à quelque chose.',
-    en: 'Passionate about the web, well-crafted tools and projects that actually matter.',
+    fr: 'Ingénieur logiciel créant des choses amusantes.',
+    en: 'Software engineer making fun things.',
   },
   location: { fr: 'Île-de-France, France', en: 'Paris area, France' },
   status: { emoji: '🚀', text: { fr: 'Ouvert aux opportunités', en: 'Open to opportunities' } },

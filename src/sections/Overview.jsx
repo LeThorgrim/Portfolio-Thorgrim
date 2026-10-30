@@ -2,7 +2,7 @@ import profile from '../data/profile.js'
 import Markdown from '../components/Markdown.jsx'
 import ActivityGraph from '../components/ActivityGraph.jsx'
 import Icon from '../components/Icon.jsx'
-import { Box, LangDot, Label } from '../components/ui.jsx'
+import { Box, ExternalLink, LangDot, Label } from '../components/ui.jsx'
 import { useLang } from '../i18n.jsx'
 
 function PinnedCard({ item }) {
@@ -25,6 +25,11 @@ function PinnedCard({ item }) {
           </span>
         )}
         {item.meta && <span className="meta-item">{item.meta}</span>}
+        {item.links?.map((l) => (
+          <ExternalLink key={l.url} href={l.url}>
+            {l.label}
+          </ExternalLink>
+        ))}
       </footer>
     </article>
   )

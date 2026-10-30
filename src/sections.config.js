@@ -15,6 +15,8 @@
 //    component  composant qui affiche la section ; il reçoit { items, section }
 //    items      les données
 //    toPinned   (optionnel) (item, lang) -> carte épinglée de l'Aperçu (si item.pinned)
+//               champs possibles : icon, title, subtitle, description, lang, stars, meta,
+//               href (lien du titre), links ([{ label, url }] affichés en bas de la carte)
 //    toActivity (optionnel) item -> [{ month: 'AAAA-MM', weight }] pour le graphe
 // ─────────────────────────────────────────────────────────────
 
@@ -63,6 +65,7 @@ export const sections = [
       lang: tr(a.tags?.[0], lang),
       stars: a.stars,
       href: a.links?.[0]?.url,
+      links: (a.links ?? []).map((l) => ({ label: tr(l.label, lang), url: l.url })),
     }),
     toActivity: (a) => (a.date ? [{ month: a.date, weight: 3 }] : []),
   },
