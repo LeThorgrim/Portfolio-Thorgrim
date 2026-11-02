@@ -42,7 +42,7 @@ const experiences = [
   },
   //all level up
   {
-    role: { fr: 'Développeur Web/Full Stack', en: 'Full Stack Developer' },
+    role: { fr: 'Développeur Web/DevOps', en: 'Web/DevOps Developer' },
     company: 'All Level Up',
     start: '2024-01',
     end: '2024-01',
@@ -61,7 +61,7 @@ const experiences = [
   },
   //portimao
   {
-    role: { fr: 'Stagiaire Développeur·se', en: 'Developer Intern' },
+    role: { fr: 'Développeur Full Stack', en: 'Full Stack Developer' },
     company: 'Câmara Municipal de Portimão',
     start: '2025-05',
     end: '2025-07',
